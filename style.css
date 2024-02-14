@@ -1,3 +1,37 @@
+
+
 body{
-    background: linear-gradient(45deg, #f7f7f7 50%, #240265 50%);
+    font-family: "Aref Ruqaa", serif;
+    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0px;
+}
+#city{
+    color: white;
+}
+#city-name{
+    font-weight: 400;
+    font-size: 200px;
+    color: white;
+}
+
+.card{
+    width: 12%;
+    height: 95%;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 10px 5px rgb(0 0 0 / 30%);
+}
+
+.header{
+    background-color: #5200e1;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    
+}
+
+.header h1{
+    font-weight: 400;
 }
