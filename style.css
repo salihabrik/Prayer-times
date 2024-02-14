@@ -1,8 +1,7 @@
 
-
-body{
-    font-family: "Aref Ruqaa", serif;
-    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: linear-gradient(45deg, #240165, #05001c );
 }
 h1,h2,h3,h4,h5,h6{
     margin: 0px;
@@ -11,7 +10,7 @@ h1,h2,h3,h4,h5,h6{
     color: white;
 }
 #city-name{
-    font-weight: 400;
+    font-weight: 200;
     font-size: 200px;
     color: white;
 }
