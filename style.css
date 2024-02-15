@@ -6,11 +6,9 @@ body {
 h1,h2,h3,h4,h5,h6{
     margin: 0px;
 }
-#city{
-    color: white;
-}
+
 #city-name{
-    font-weight: 200;
+    font-weight: 100;
     font-size: 200px;
     color: white;
 }
