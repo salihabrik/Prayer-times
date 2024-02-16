@@ -110,7 +110,15 @@ const readableDate = response.data.data.date.readableDate;
 const weehDay = response.data.data.date.hijri.weekday.ar;*/
 
 
+let cities =[
+    "قسنطينة" , "عنابة" , "وهران"
+]
 
+for (let city of cities){
+    const content = `
+    <option>${city}</option>`
+    document.getElementBuId("cities-select").innerHTML += content 
+}
 let params = {
     country: "dz",
     city: "constantine"
@@ -136,6 +144,13 @@ axios.get("http://api.aladhan.com/v1/timingsByCity", {
         ichaTime.innerHTML = timings.Isha;
 
         console.log(response.data.data.timings);
+
+        const readableDate = response.data.data.date.readable;
+        const weekDay = response.data.data.date.hijri.weekday.ar;
+        const date = readableDate + " " + weekDay
+        document.getElementById("date").innerHTML = date
+
+        connsole.log(weekDay + " " + readableDate)
     })
     .catch(function (error) {
         console.log(error);
