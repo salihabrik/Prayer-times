@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Tajawal', sans-serif;
+    font-family: Tajawal'Tajawal', sans-serif;
     background: linear-gradient(45deg, #240165, #05001c );
 }
 h1,h2,h3,h4,h5,h6{
@@ -14,11 +14,15 @@ h1,h2,h3,h4,h5,h6{
 }
 .card{
     width: 12%;
-    height: 95%;
+    height: 85%;
     background-color: white;
     border-radius: 10px;
     font-size: 20px;
     box-shadow: 0 10px 5px rgb(0 0 0 / 30%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .header{
