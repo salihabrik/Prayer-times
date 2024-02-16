@@ -1,4 +1,4 @@
-let params = {
+/*let params = {
     country: "dz",
     city: "constantine"
 };
@@ -41,7 +41,8 @@ function fillTimeForPrayer(id, time) {
 
 
 
-/*let params = {
+
+let params = {
     country: "dz",
     city: "constantine"
 };
@@ -68,32 +69,81 @@ fetch(url)
     });
 
 
+"use strict";
+const axios = require("axios");
+
 let params = {
-    country : "dz",
+    country: "dz",
     city: "constantine"
+};
+
+axios.get("http://api.aladhan.com/v1/timingsByCity", {
+    params: params
+})
+    .then(function (response) {
+        const timings = response.data.data.timings;
+        const fajrTime = document.getElementById("fajr-time");
+        const sunriseTime = document.getElementById("sunrise-time");
+        const duhrTime = document.getElementById("duhr-time");
+        const asrTime = document.getElementById("asr-time");
+        const sunsetTime = document.getElementById("sunset-time");
+        const ichaTime = document.getElementById("icha-time");
+
+        fajrTime.innerHTML = timings.Fajr;
+        sunriseTime.innerHTML = timings.Sunrise;
+        duhrTime.innerHTML = timings.Dhuhr;
+        asrTime.innerHTML = timings.Asr;
+        sunsetTime.innerHTML = timings.Sunset;
+        ichaTime.innerHTML = timings.Isha;
+
+        console.log(response.data.data.timings);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+function fillTimeForPrayer(id, time) {
+    document.getElementById(id).innerHTML = time;
 }
 
-axios.get('http://api.aladhan.com/v1/timingsByCity', {
+const readableDate = response.data.data.date.readableDate;
+const weehDay = response.data.data.date.hijri.weekday.ar;*/
+
+
+
+let params = {
+    country: "dz",
+    city: "constantine"
+};
+
+axios.get("http://api.aladhan.com/v1/timingsByCity", {
     params: params
-  })
-  .then(function (response) {
-    const timings = response.data.data.timings
-    fillTimeForPrayer(fajr-time, timings.Fajr)
-    fillTimeForPrayer(sunrise-time, timings.Sunrise)
+})
+    .then(function (response) {
+        const timings = response.data.data.timings;
+        const fajrTime = document.getElementById("fajr-time");
+        const sunriseTime = document.getElementById("sunrise-time");
+        const duhrTime = document.getElementById("duhr-time");
+        const asrTime = document.getElementById("asr-time");
+        const sunsetTime = document.getElementById("sunset-time");
+        const ichaTime = document.getElementById("icha-time");
 
-    fillTimeForPrayer(duhr-time, timings.Dhuhr)
-    fillTimeForPrayer(asr-time, timings.Asr)
-    fillTimeForPrayer(sunset-time, timings.Sunset)
-    fillTimeForPrayer(icha-time, timings.Icha)
-    document.getElementById("fajr-time").innerHtml = timing.Fajr
-    console.log(response.data.data.timings.Fajr);
-  })
-  .catch(function (error) {
-    console.log(error);
-  
-  });
+        fajrTime.innerHTML = timings.Fajr;
+        sunriseTime.innerHTML = timings.Sunrise;
+        duhrTime.innerHTML = timings.Dhuhr;
+        asrTime.innerHTML = timings.Asr;
+        sunsetTime.innerHTML = timings.Sunset;
+        ichaTime.innerHTML = timings.Isha;
 
-  function fillTimeForPrayer(id, time)
-  {
-    document.getElementById("id").innerHtml = time
-  }
+        console.log(response.data.data.timings);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+function fillTimeForPrayer(id, time) {
+    document.getElementById(id).innerHTML = time;
+}
+
+//const readableDate = response.data.data.date.readable;
+//const weekDay = response.data.data.date.hijri.weekday.ar;
