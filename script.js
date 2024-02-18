@@ -1,4 +1,4 @@
-/*let params = {
+let params = {
     country: "dz",
     city: "constantine"
 };
